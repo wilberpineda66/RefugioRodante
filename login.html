@@ -1,0 +1,120 @@
+<?php
+session_start();
+require_once "controlador/controlador.formulario.php";
+?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reffugio Rodante - Iniciar sesión</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.7.32/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+<body>
+
+
+   <style>
+    .hero {
+        background-image: url('principal.png');
+    }
+
+    .nav-link-wrapper a {
+        text-decoration: none;
+        /* Quita el subrayado */
+        color: white;
+        /* Texto blanco */
+
+        padding: 10px;
+        transition: color 0.3s ease;
+    }
+</style>
+
+
+    <header>
+        <div class="logo-container">
+            <div class="left-side">
+                <a href=""><img src="refugiorodante2.png" alt="Logo"></a>
+            </div>
+            <div class="right-side">
+                <h1>REFUGIO RODANTE</h1>
+            </div>
+
+            <!-- Botón de menú hamburguesa -->
+            <div class="menu-toggle" id="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <!-- Enlaces de navegación -->
+        <nav id="nav-menu" class="nav-links">
+            <div class="nav-link-wrapper"><a href="index.html">Inicio</a></div>
+            <div class="nav-link-wrapper"><a href="informacion.html">Más información</a></div>
+            <div class="nav-link-wrapper"><a href="quienessomos.html">Quienes Somos</a></div>
+            <div class="nav-link-wrapper"><a href="login.html">Iniciar Sesión</a></div>
+        </nav>
+    </header>
+
+
+
+    <div class="login-box sign-in">
+        <form method="post" action="" class="auth-form">
+            <h1>Iniciar sesión</h1>
+
+            <input type="email" name="Email" placeholder="Correo electrónico o número de teléfono" required>
+            <input type="password" name="Contrasena" placeholder="Contraseña" required>
+
+            <button type="submit" name="btnLogin" class="submit-btn">Iniciar sesión</button>
+
+            <a href="#" class="recovery-link">¿Olvidaste tu cuenta?</a>
+
+            <div class="separator"></div>
+
+            <a href="registro.html" class="register-btn">Crear cuenta nueva</a>
+        </form>
+
+
+    </div>
+<!-- 
+    <?php
+    if (isset($_POST['btnLogin'])) {
+        // Verificar que los datos llegan correctamente
+        $email = isset($_POST["Email"]) ? trim($_POST["Email"]) : "";
+        $password = isset($_POST["Contrasena"]) ? $_POST["Contrasena"] : "";
+
+        // TEMPORAL: Muestra los valores en consola para depuración
+        echo "<script>console.log('Email: " . $email . "');</script>";
+        echo "<script>console.log('Contraseña: " . $password . "');</script>";
+
+        // Llamar al controlador
+        $resultado = controladorformularios::ctrIniciarSesion();
+
+        if ($resultado === "error") {
+            echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Email o contraseña incorrectos'
+                
+            });
+        </script>";
+        }
+    }
+    ?> -->
+    </div>
+
+
+
+    <script src="bilboard.js"></script>
+
+</body>
+
+</html>
